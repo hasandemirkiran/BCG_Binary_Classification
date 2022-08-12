@@ -1,8 +1,8 @@
-import pandas as pd
-import numpy as np
-import os
-from datetime import datetime
-import math 
+# import pandas as pd
+# import numpy as np
+# import os
+# from datetime import datetime
+# import math 
 
 # data={'Name':['Karan','Rohit','Sahil','Aryan'],'Age':[23,22,21,24],'Surnname':['demir', 'kiran', 'cayir', 'cimen']}
 # df = pd.DataFrame(data)
@@ -41,8 +41,15 @@ import math
 
 
 
-x = '20.442'
-y = '565,554'
+# x = '20.442'
+# y = '565,554'
 
-print(math.floor(y))
-# print(int(y))
+# print(math.floor(y))
+# # print(int(y))
+
+import os
+import sys
+# import seaborn 
+
+print(sys.path)
+print(os.path.dirname(sys.executable))
