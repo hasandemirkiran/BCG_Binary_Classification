@@ -3,6 +3,7 @@
 # import os
 # from datetime import datetime
 # import math 
+# import csv 
 
 # data={'Name':['Karan','Rohit','Sahil','Aryan'],'Age':[23,22,21,24],'Surnname':['demir', 'kiran', 'cayir', 'cimen']}
 # df = pd.DataFrame(data)
@@ -47,9 +48,23 @@
 # print(math.floor(y))
 # # print(int(y))
 
-import os
-import sys
-# import seaborn 
+# import os
+# import sys
+# # import seaborn 
 
-print(sys.path)
-print(os.path.dirname(sys.executable))
+# print(sys.path)
+# print(os.path.dirname(sys.executable))
+
+# customers_df = pd.read_csv('data/customers.csv')
+# customer_names = customers_df['customer_name'] 
+# for customer in customer_names:
+#     print(customer)
+
+# from source.datasource.datasource_file import FileDataSource
+
+# fileObject = FileDataSource("data_config/file_ds.py")
+
+from source.tests.deneme.module import method   
+# call method from that module  
+
+method()

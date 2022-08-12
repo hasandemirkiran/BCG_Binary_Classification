@@ -13,9 +13,6 @@ import seaborn
 import warnings
 warnings.filterwarnings("ignore")
 
-CUSTOMERS = ['nationwide', 'evergy']
-PROGRAM_END_DATES = {'nationwide': '31.12.2023', 'evergy': '31.12.2025' }
-
 def prepare_dataframes(customer):
     df_impact = pd.read_csv(f'../../data/{customer}/impact_values_pl.csv', sep=';')
     df_features = pd.read_csv(f'../../data/{customer}/input.csv', sep=';')
@@ -52,8 +49,12 @@ def create_customer_outputfile(customer, output_df):
     output_df.to_csv(filepath)
 
 def create_all_output_files():
-    for customer in CUSTOMERS:
+    # Read customer names from customers.csv -> Check read_write_custoemers
+    customers_df = pd.read_csv('data/customers.csv')
+    customer_names = customers_df['customer_name'] 
+    for customer in customer_names:
         output_df =  prepare_dataframes(customer)
+
         print(output_df)
         # create_customer_outputfile(customer, output_df)
 
@@ -66,8 +67,6 @@ def main():
     if (args.create_features):
         create_all_output_files()
 
-
-    
       
 if __name__ == "__main__":
     main()
