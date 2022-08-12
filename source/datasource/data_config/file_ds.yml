@@ -1,0 +1,38 @@
+datasources:
+  initiative_data:
+      # the next line specifies if the data is read from a 'file'(csv) or 'rds'
+      # more sources can be specified in:
+      # horaizon/datasource/dataset.py
+      file:
+        location: data/DataExtract_Pilot_20220527_02.xlsx
+        sheet: InitiativeLevel
+      # specify columns with date/timestamps and convert the
+      # timezone if needed
+      date_cols:
+        - initiative_creation_date
+      datetime_format: "%d.%m.%y"
+      read_timezone: Europe/Berlin
+      target_timezone: UTC
+#      use_cols:
+##        - db_identifier
+#        - program_id
+##        - initiative_id
+##        - is_financial_initiative
+##        - initiative_has_primary_impact_influence
+#        - number_milestones
+##        - number_impact_bearing_milestones
+##        - number_non_impact_bearing_milestones
+#        - number_completed_milestones
+##        - number_attributes_per_initiative
+##        - initiative_first_ms_date
+##        - initiative_last_ms_date
+#        - initiative_creation_date
+##        - pl_pimpact_plan
+##        - pl_pimpact_froecast
+##        - pl_pimpact_implemented
+#        - success_definition_initiative_01
+      drop_nans:
+        - program_id
+      dtypes:
+        program_id: str
+
